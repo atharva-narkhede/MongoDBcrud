@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
         }
         else {
             let db = conn.db("nodedb")
-            db.collection('products').find().toArray((err, array) => {
+            db.collection('testdb').find().toArray((err, array) => {
                 if (err) {
                     console.log('error in array')
 

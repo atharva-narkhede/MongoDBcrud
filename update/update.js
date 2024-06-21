@@ -23,7 +23,7 @@ router.put("/", (req, res) => {
         }
         else {
             let db = conn.db('nodedb')
-            db.collection('products').updateOne({ p_id }, { $set: obj }, (err, result) => {
+            db.collection('testdb').updateOne({ p_id }, { $set: obj }, (err, result) => {
                 if (err) {
                     res.json({ 'update': 'error' + err })
                 }
@@ -33,7 +33,7 @@ router.put("/", (req, res) => {
                         res.json({ 'update': 'success' })
                     }
                     else{
-                        console.log("data not updated")
+                        console.log("Data not updated")
                         res.json({'update':'Record not found'})
                     }
                     conn.close()

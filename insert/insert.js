@@ -16,13 +16,13 @@ router.post("/", (req, res) => {
         }
         else {
             let db = conn.db("nodedb")
-            db.collection('products').insertOne(obj, (err) => {
+            db.collection('testdb').insertOne(obj, (err) => {
                 if (err) {
                     res.json({ 'insert': 'error' + err })
 
                 }
                 else {
-                    console.log('data inserted')
+                    console.log('Data Inserted')
                     res.json({ 'insert': 'success' })
                     conn.close()
                 }

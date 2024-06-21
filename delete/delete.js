@@ -16,7 +16,7 @@ router.delete("/", (req, res) => {
             console.log('Error in connection:- ', err)
         else {
             let db = conn.db("nodedb")
-            db.collection('products').deleteOne(obj, (err, result) => {
+            db.collection('testdb').deleteOne(obj, (err, result) => {
                 if (err)
                     res.json({ 'delete': 'Error ' + err })
                 else {
